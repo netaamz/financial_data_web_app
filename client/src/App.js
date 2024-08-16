@@ -5,13 +5,14 @@ import Navbar from "./components/Navbar.js";
 import { Route, Routes } from "react-router-dom";
 import Coin from "./routes/Coin.js";
 import Dashboard from "./pages/Dashboard.js";
+
+
 function App() {
 
   return (
-    <>
-    <Dashboard/>
-      
-    </>
+    <div className="app">
+      <Dashboard/>
+    </div>
   );
 }
 
