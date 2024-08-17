@@ -16,6 +16,7 @@ body {
 
   background-color: #26272b;
   color: #f4f4f4;
+  background-color: #26272b !important; /* Ensure custom background color */
 }
 
 a {
@@ -26,9 +27,12 @@ a {
 h1 {
   text-align: center;
   margin: 1rem;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    
 }
+

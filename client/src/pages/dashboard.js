@@ -4,7 +4,6 @@ import Coins from "../components/Coins.js";
 import Navbar from "../components/Navbar.js";
 import { Route, Routes } from "react-router-dom";
 import Coin from "../routes/Coin.js";
-import Signup from "./Signup.js";
 
 const Dashboard = () => {
     const url =
@@ -22,19 +21,17 @@ const Dashboard = () => {
         console.log(error);
       });
   }, []);
+
+
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path='/' element={<Coins coins={coins}/>}/>
-        <Route path='/coin' element= {<Coin/>}>
-        <Route path=':coinId' element={<Coin/>}/></Route>
-        <Route path='/signup' element={<Signup />} />
+        <Route path="/" element={<Coins coins={coins} />} />
+        <Route path="/coin/:coinId" element={<Coin />} />
       </Routes>
-    
-      
     </>
   );
 }
 
-export default Dashboard
+export default Dashboard;

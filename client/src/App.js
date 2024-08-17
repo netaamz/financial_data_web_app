@@ -1,17 +1,35 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Coins from "./components/Coins.js";
-import Navbar from "./components/Navbar.js";
-import { Route, Routes } from "react-router-dom";
-import Coin from "./routes/Coin.js";
-import Dashboard from "./pages/Dashboard.js";
-
+import React from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Coin from "./routes/Coin"; // Ensure Coin component is imported if necessary
 
 function App() {
+  
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Signup />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/dashboard",
+      element: <Dashboard />,
+    },
+    {
+      path: "/coin/:coinId", // Ensure route for Coin is set here if needed
+      element: <Coin />,
+    },
+
+  ]);
 
   return (
     <div className="app">
-      <Dashboard/>
+      <RouterProvider router={router} />
     </div>
   );
 }

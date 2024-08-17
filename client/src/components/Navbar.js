@@ -7,7 +7,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   return (
-    <Link to='/'>
+    <Link to='/dashboard'>
       <div className="navbar">
         <FaCoins className="icon"/>
         <h1>
@@ -20,8 +20,8 @@ const Navbar = () => {
             <option value="nis">NIS</option>
             <option value="eur">EUR</option>
           </select>
-          <Link to='/signup'>
-          <button>Sign up <GoArrowUpRight className="SignUp-icon" /></button>
+          <Link to='/contactUs'>
+          <button>Contact Us<GoArrowUpRight className="SignUp-icon" /></button>
           </Link>
 
 

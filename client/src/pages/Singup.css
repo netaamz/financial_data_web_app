@@ -22,13 +22,15 @@
 .addUserForm .inputGroup input{
     margin-top: 5px;
     padding: 10px ;
+    
 
 }
 
 
-.inputGroup input .button{
+.inputGroup button{
     margin-top: 10px;
 }
+
 
 .login{
     margin-top: 30px;
@@ -37,6 +39,8 @@
 
 .login .btn.btn-primary{
     width: 50%;
+    background-color: #6900ff;
+
 }
 
 .addUser h2{

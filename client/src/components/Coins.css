@@ -1,6 +1,8 @@
+
 .container {
     max-width: 1140px;
     margin: auto;
+    color: white;
 }
 
 .heading {
@@ -13,10 +15,14 @@
     margin: 2rem 1rem;
     padding: .7rem 1rem;
     font-weight: 700;
+    color: white;
+    
+    
 }
 
 .coin-name {
     margin-left: -4rem;
+    color: white;
 }
 
 .coin-row {
@@ -28,6 +34,8 @@
     border-radius: 8px;
     margin: 2rem 1rem;
     padding: .7rem 1rem;
+    color: white;
+    
 }
 
 .coin-row:hover {
@@ -48,6 +56,11 @@ img {
 }
 
 
+/* Remove underline from all links */
+a {
+    color: white; /* Ensure links are white */
+    text-decoration: none !important; /* Ensure no underline */
+}
 
 @media screen and (max-width: 720px) {
     .hide-mobile {
