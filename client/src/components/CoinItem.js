@@ -1,5 +1,6 @@
 import React from 'react'
 import './Coins.css'
+
 const CoinItem = (props) => {
   return (
     <div className='coin-row'>

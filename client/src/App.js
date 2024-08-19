@@ -4,27 +4,21 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Coin from "./routes/Coin"; // Ensure Coin component is imported if necessary
+import Layout from "./pages/Layout"; // Adjust the path to where Layout.js is located
 
 function App() {
   
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Signup />,
+      element: <Layout />, // Use Layout as the root element
+      children: [
+        { path: "/", element: <Signup /> },
+        { path: "/login", element: <Login /> },
+        { path: "/dashboard", element: <Dashboard /> },
+        { path: "/coin/:coinId", element: <Coin /> },
+      ],
     },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-    {
-      path: "/dashboard",
-      element: <Dashboard />,
-    },
-    {
-      path: "/coin/:coinId", // Ensure route for Coin is set here if needed
-      element: <Coin />,
-    },
-
   ]);
 
   return (

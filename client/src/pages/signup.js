@@ -2,36 +2,73 @@ import React, { useState } from 'react';
 import { useNavigate, Link} from 'react-router-dom';
 import './Singup.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 const Signup = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); // Added state for error handling
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  // Email validation function
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Password validation function
+  const validatePassword = (password) => {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+\\|[\]{};:/?.><]).{6,}$/;
+    return passwordRegex.test(password);
+  };
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    setError(''); // Clear any previous errors
+    setError('');
+    setSuccess('');
 
+    // Validate email
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    // Validate password
+    if (!validatePassword(password)) {
+      setError(
+        'Password must be at least 6 characters long, include an uppercase letter, a lowercase letter, a number, and a special character (!@#$%^&*()\\-_=+|[]{};:/?.><).'
+      );
+      return;
+    }
+
+    // Confirm password validation
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.');
+      return;
+    }
+
+    // If validation passes, send the data to the server
     try {
-      // Perform signup logic (e.g., API call)
-      // This is where you would make your API call to register the user
-      // For example:
-      // const response = await axios.post('/api/signup', { name, email, password });
-      // if (response.data.success) {
-      //   navigate('/dashboard');
-      // } else {
-      //   setError(response.data.message || 'Signup failed');
-      // }
-      
-      // For demonstration, we'll assume signup is always successful:
-      navigate('/dashboard');
-    } catch (error) {
-      console.error('Signup failed:', error);
-      setError('An error occurred during signup. Please try again.');
+      const response = await axios.post('http://localhost:3001', {
+        name,
+        email,
+        password,
+      });
+
+      if (response.status === 201) {
+        setSuccess('Signup successful');
+        setError('');
+        navigate('/login');
+      }
+    } catch (err) {
+      console.error('Signup error:', err);  // Log error details for debugging
+      setError(err.response?.data?.message || 'An error occurred during signup.');
     }
   };
+
   return (
     <div className='addUser'>
       <h2>Sign Up</h2>
@@ -67,18 +104,29 @@ const Signup = () => {
             placeholder='Enter password'
           />
 
+          <label htmlFor='confirmPassword'>Confirm Password:</label>
+          <input
+            type='password'
+            id='confirmPassword'
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            autoComplete='off'
+            placeholder='Confirm your password'
+          />
+
           <button
             type='submit'
-            className='btn btn-success'>Sign Up
+            className='btn btn-success'>Create my Account
           </button>
         </div>
-        
-        {error && <p className='error'>{error}</p>} {/* Display error message if any */}
+
+        {error && <p className='error'>{error}</p>}
+        {success && <p className='success'>{success}</p>}
       </form>
 
       <div className='login'>
         <p>Already have an account?</p>
-        <Link to='/login' className='btn btn-primary'>Login</Link>
+        <Link to='/login' className='btn btn-primary'>Sign In</Link>
       </div>
     </div>
   );
