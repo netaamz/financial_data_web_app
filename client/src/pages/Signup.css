@@ -22,15 +22,22 @@
 .addUserForm .inputGroup input{
     margin-top: 5px;
     padding: 10px ;
-    
 
 }
 
-.inputGroup button{
+.inputGroup button {
     margin-top: 10px;
     background-color: green;
+    border: 2px solid green; 
+    color: white; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
 }
 
+.inputGroup button:hover {
+    background-color: white; 
+    color: green; 
+}
 
 
 .login{
@@ -39,9 +46,17 @@
 }
 
 .login .btn.btn-primary{
-    width: 50%;
+    margin-top: 1px;
     background-color: #6900ff;
+    border: 2px solid #6900ff; 
+    color: white; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
 
+.login .btn.btn-primary:hover{
+    background-color: white; 
+    color: #6900ff; 
 }
 
 .addUser h2{

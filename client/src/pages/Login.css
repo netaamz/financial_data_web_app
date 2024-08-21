@@ -5,14 +5,12 @@
     padding: 40px;
     border-radius: 10px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0,0.065);
-    color: #6900ff;    
 }
 
 .addUserForm .inputGroup{
     width: 100%;
     display: flex;
     flex-direction: column;
-
 }
 
 .addUserForm .inputGroup label{
@@ -22,15 +20,21 @@
 .addUserForm .inputGroup input{
     margin-top: 5px;
     padding: 10px ;
-    
-
 }
-
 
 .inputGroup button{
     margin-top: 10px;
+    background-color: green;
+    border: 2px solid green; 
+    color: white; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s;
 }
 
+.inputGroup button:hover {
+    background-color: white; 
+    color: green; 
+}
 
 .signup{
     margin-top: 30px;
@@ -38,9 +42,17 @@
 }
 
 .signup .btn.btn-success{
+    margin-top: 1px;
     background-color: #6900ff;
-    width: 50%;
+    border: 2px solid #6900ff; 
+    color: white; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
 
+.signup .btn.btn-success:hover{
+    background-color: white; 
+    color: #6900ff; 
 }
 
 .addUser h2{
@@ -48,5 +60,4 @@
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 1px 1px 8px rgba(0, 0, 0,0.065);
-    
 }
