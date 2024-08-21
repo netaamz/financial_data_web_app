@@ -34,6 +34,7 @@ const Login = () => {
     // Validate email
     if (!validateEmail(email)) {
       setError('Please enter a valid email address.');
+      setIsSubmitting(false); // Stop submitting
       return;
     }
 
@@ -42,6 +43,7 @@ const Login = () => {
       setError(
         'Password must be at least 6 characters long, include an uppercase letter, a lowercase letter, a number, and a special character (!@#$%^&*()\\-_=+|[]{};:/?.><).'
       );
+      setIsSubmitting(false); // Stop submitting
       return;
     }
 
@@ -68,8 +70,8 @@ const Login = () => {
       }
     } catch (error) {
       setError(error.response?.data?.message || 'An error occurred during login.');
-    }finally {
-      setIsSubmitting(false); // End submitting
+    } finally {
+      setIsSubmitting(false); // End submitting regardless of the outcome
     }
   };
 
