@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaCoins } from "react-icons/fa";
+import { SiBitcoincash } from "react-icons/si";
 import { Link, useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import { IoChatbubblesOutline } from "react-icons/io5";
@@ -33,31 +33,32 @@ const Navbar = () => {
   };
 
   const handleLoginClick = () => {
-    navigate('/login'); 
+    navigate('/login');
   };
 
   return (
-    
-      <div className="navbar">
-        <Link to='/dashboard'>
-        <FaCoins className="icon"/>
-        <h1>
-          {" "}
-          Crypto<span className="search"> Data</span>
-        </h1>
-        </Link>
-        <div className="nav-right"> 
-          <Link to='/contactUs'>
-            <button>Contact Us <IoChatbubblesOutline /></button>
-          </Link>
-          {user ? (
-            <UserDropdown user={user} onLogout={handleLogout} />
-          ) : (
-            <button onClick={handleLoginClick}>Log In <BsPersonCircle /></button>
-          )}
-        </div>
+
+    <div className="navbar">
+      <div className="icon">
+        <span ><SiBitcoincash /></span>
       </div>
-    
+      <Link to='/dashboard'>
+        <h1>
+          <span className="search">Crypto Data</span>
+        </h1>
+      </Link>
+      <div className="nav-right">
+        <Link to='/contactUs'>
+          <button>Contact Us <IoChatbubblesOutline /></button>
+        </Link>
+        {user ? (
+          <UserDropdown user={user} onLogout={handleLogout} />
+        ) : (
+          <button onClick={handleLoginClick}>Log In <BsPersonCircle /></button>
+        )}
+      </div>
+    </div>
+
   );
 };
 
