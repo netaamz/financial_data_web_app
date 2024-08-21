@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FaCoins } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-//import { GoArrowUpRight } from "react-icons/go";
-import { IoMdContact } from "react-icons/io";
+import { BsPersonCircle } from "react-icons/bs";
+import { IoChatbubblesOutline } from "react-icons/io5";
 import UserDropdown from './UserDropdown'; // Import the UserDropdown component
 
 import './Navbar.css'
@@ -32,24 +32,32 @@ const Navbar = () => {
     navigate('/'); // Redirect to the homepage or login page
   };
 
+  const handleLoginClick = () => {
+    navigate('/login'); 
+  };
 
   return (
-    <Link to='/dashboard'>
+    
       <div className="navbar">
+        <Link to='/dashboard'>
         <FaCoins className="icon"/>
         <h1>
           {" "}
-          Coin<span className="search"> Search</span>
+          Crypto<span className="search"> Data</span>
         </h1>
+        </Link>
         <div className="nav-right"> 
           <Link to='/contactUs'>
-          <button>Contact Us <IoMdContact /></button>
+            <button>Contact Us <IoChatbubblesOutline /></button>
           </Link>
-          <UserDropdown user={user} onLogout={handleLogout} />
-
+          {user ? (
+            <UserDropdown user={user} onLogout={handleLogout} />
+          ) : (
+            <button onClick={handleLoginClick}>Log In <BsPersonCircle /></button>
+          )}
         </div>
       </div>
-    </Link>
+    
   );
 };
 
