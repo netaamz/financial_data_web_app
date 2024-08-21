@@ -61,7 +61,7 @@ const Signup = () => {
       if (response.status === 201) {
         setSuccess('Signup successful');
         setError('');
-        navigate('/login');
+        navigate('/Dashboard');
       }
     } catch (err) {
       console.error('Signup error:', err);  // Log error details for debugging
