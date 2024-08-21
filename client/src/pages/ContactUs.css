@@ -1,0 +1,109 @@
+/* ContactUs.css */
+
+/* Full page container with rounded corners */
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px; /* Add some padding around the container */
+}
+
+.mainContact {
+    display: flex;
+    border-radius: 15px; /* Rounded corners for the entire container */
+    overflow: hidden; /* Ensure content doesn't overflow out of rounded corners */
+    width: 100%; 
+    max-width: 1200px; /* Increase width as needed */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Add a shadow for better visual separation */
+}
+
+.contactInfo,
+.contactForm {
+    flex: 3; /* Equal width for both sections */
+    padding: 20px;
+}
+
+.contactInfo {
+    background-color: #ffffff; /* White background */
+    color: #000000;
+}
+
+.contactForm {
+    background-color: #f0eaff; /* Light purple background */
+}
+
+/* Title Styling */
+.contactInfo h1 {
+    font-size: 1.5rem; /* Adjust size as needed */
+    color: #6900ff; /* Purple color */
+}
+
+.contactForm label {
+    font-size: 2rem; /* Larger size for the 'Contact Us' title */
+    font-weight: bold;
+    color: #000000; /* Black color */
+}
+
+/* Form Styling */
+.contactForm textarea {
+    height: 150px;
+    color: #000000; /* Black text color */
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    resize: vertical;
+}
+
+.contactForm input,
+.contactForm textarea,
+.contactForm select {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: #000000; /* Black text color */
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus,
+.contactForm select:focus {
+    border-color: #6900ff;
+    outline: none;
+}
+
+/* Social Media and Button Styling */
+.social-media a {
+    margin-right: 15px;
+    color: #333; /* Dark gray color */
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #6900ff; /* Purple on hover */
+}
+
+.support-button {
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background-color: #6900ff;
+    border-color: #6900ff;
+}
+
+.btn-primary:hover {
+    background-color: #5600e0;
+    border-color: #5600e0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .contactInfo,
+    .contactForm {
+        padding: 15px;
+    }
+
+    .social-media a {
+        margin-right: 10px;
+    }
+}

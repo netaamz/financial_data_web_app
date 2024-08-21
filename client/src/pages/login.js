@@ -10,6 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Email validation function
   const validateEmail = (email) => {
@@ -27,6 +28,8 @@ const Login = () => {
     e.preventDefault();
     setError('');
     setSuccess('');
+
+    setIsSubmitting(true); // Start submitting
 
     // Validate email
     if (!validateEmail(email)) {
@@ -50,13 +53,23 @@ const Login = () => {
       });
 
       if (response.data.message === 'Login successful') {
+
+        // Save user data and token in localStorage
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        localStorage.setItem('token', response.data.token);
+
         setSuccess('Login successful! Redirecting to dashboard...');
-        setTimeout(() => navigate('/dashboard'), 2000); // Redirect after 2 seconds
+        setTimeout(() => {
+          setSuccess(''); // Clear success message
+          navigate('/dashboard');
+        }, 2000);
       } else {
         setError(response.data.message || 'Login failed');
       }
     } catch (error) {
       setError(error.response?.data?.message || 'An error occurred during login.');
+    }finally {
+      setIsSubmitting(false); // End submitting
     }
   };
 
@@ -85,10 +98,11 @@ const Login = () => {
             placeholder='Enter password'
           />
 
-          <button type='submit' className='btn btn-primary'>
+          <button type='submit' className='btn btn-primary' disabled={isSubmitting}>
             Login
           </button>
         </div>
+        {isSubmitting && <p className='loading'>Logging in...</p>}
         {error && <p className='error'>{error}</p>}
         {success && <p className='success'>{success}</p>}
       </form>
