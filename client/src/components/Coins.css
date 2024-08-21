@@ -1,13 +1,14 @@
-
+/* Container for the entire component */
 .container {
     max-width: 1140px;
     margin: auto;
     color: white;
 }
 
+/* Heading styling for table headers */
 .heading {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Ensure equal column width */
     align-items: center;
     background-color: #26272b;
     box-shadow: 0px 0px 12px #18191b;
@@ -16,18 +17,18 @@
     padding: .7rem 1rem;
     font-weight: 700;
     color: white;
-    
-    
 }
 
+/* Specific style for the coin name header */
 .coin-name {
     margin-left: -4rem;
     color: white;
 }
 
+/* Row styling for each coin item */
 .coin-row {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Ensure equal column width */
     align-items: center;
     background-color: #26272b;
     box-shadow: 0px 0px 12px #18191b;
@@ -35,26 +36,34 @@
     margin: 2rem 1rem;
     padding: .7rem 1rem;
     color: white;
-    
 }
 
+/* Hover effect for coin rows */
 .coin-row:hover {
     transform: scale(1.04);
     transition: .3s ease-in-out;
     cursor: pointer;
 }
 
+/* Center-align text in both heading and coin rows */
+.coin-row p, .heading p {
+    text-align: center; /* Center-align text horizontally in cells */
+    margin: 0;
+    padding: 0.5rem; 
+}
+
+/* Styling for images in coin rows */
 img {
     height: 40px;
     margin-right: 8px;
     width: auto;
 }
 
+/* Container for coin symbols and images */
 .img-symbol {
     display: flex;
     align-items: center;
 }
-
 
 /* Remove underline from all links */
 a {
@@ -62,6 +71,7 @@ a {
     text-decoration: none !important; /* Ensure no underline */
 }
 
+/* Responsive design adjustments for mobile screens */
 @media screen and (max-width: 720px) {
     .hide-mobile {
         display: none;
