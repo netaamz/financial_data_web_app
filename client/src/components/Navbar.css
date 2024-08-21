@@ -9,7 +9,7 @@
 }
 
 .icon {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #6900ff;
 }
 
@@ -24,10 +24,16 @@
 }
 
 .user-dropdown select {
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #393939;
+    background: white;
+    border: none;
     cursor: pointer;
   }
   

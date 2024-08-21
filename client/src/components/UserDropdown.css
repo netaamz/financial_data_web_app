@@ -1,20 +1,19 @@
 .user-dropdown {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-dropdown select {
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    color: #495057;
-    cursor: pointer;
-  }
-  
-  .user-dropdown select:focus {
-    border-color: #80bdff;
-    outline: none;
-  }
-  
+  display: flex;
+  align-items: center;
+}
+
+.user-dropdown select {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  color: #495057;
+  cursor: pointer;
+}
+
+.user-dropdown select:focus {
+  border-color: #80bdff;
+  outline: none;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './UserDropdown.css'; // Import the CSS file
 
 const UserDropdown = ({ user, onLogout }) => {
   const handleDropdownChange = (e) => {
@@ -14,11 +14,11 @@ const UserDropdown = ({ user, onLogout }) => {
       <select 
         id="user-dropdown" 
         onChange={handleDropdownChange} 
-        value={user ? 'user' : ''} 
+        value="user" 
         aria-label="User menu"
       >
-        <option value='' disabled>{user ? `Hello, ${user.name}` : 'User'}</option>
-        <option value='logout'>Logout</option>
+        <option value="user" disabled>{user ? `Hello, ${user.name}` : 'User'}</option>
+        <option value="logout">Logout</option>
       </select>
     </div>
   );
