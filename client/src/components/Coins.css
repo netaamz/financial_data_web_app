@@ -71,6 +71,33 @@ a {
     text-decoration: none !important; /* Ensure no underline */
 }
 
+
+.positive-change {
+    color: rgb(89, 230, 89);
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+}
+
+.negative-change {
+    color: rgb(234, 89, 89);
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+}
+
+.coin-row span {
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
 /* Responsive design adjustments for mobile screens */
 @media screen and (max-width: 720px) {
     .hide-mobile {
