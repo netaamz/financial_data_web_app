@@ -9,7 +9,9 @@ import cors from 'cors';
 const app = express();
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: 'https://your-client-vercel-url.vercel.app', // Replace with your client URL
+  }));
 
 connectDB();
 
