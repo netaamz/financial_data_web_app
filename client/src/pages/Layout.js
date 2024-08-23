@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from "../components/Navbar.js";
-import { Outlet } from 'react-router-dom'; // Used for rendering nested routes
+import { Outlet } from 'react-router-dom';
 
-const Layout = () => {
+const Layout = ({ user, setUser }) => {
   return (
     <div>
-      <Navbar />
-      <Outlet /> {/* Renders the current route's component */}
+      <Navbar user={user} setUser={setUser} /> {/* Pass user and setUser to Navbar */}
+      <Outlet />
     </div>
   );
 };

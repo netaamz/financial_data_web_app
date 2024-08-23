@@ -4,7 +4,7 @@ import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const Login = () => {
+const Login = ({setUser }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -55,12 +55,17 @@ const Login = () => {
       });
 
       if (response.data.message === 'Login successful') {
+        const loggedInUser = response.data.user;
 
         // Save user data and token in localStorage
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+        localStorage.setItem('user', JSON.stringify(loggedInUser));
         localStorage.setItem('token', response.data.token);
 
+        // Update the user state immediately
+        setUser(loggedInUser);
+
         setSuccess('Login successful! Redirecting to dashboard...');
+        
         setTimeout(() => {
           setSuccess(''); // Clear success message
           navigate('/dashboard');

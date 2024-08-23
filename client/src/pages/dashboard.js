@@ -23,12 +23,12 @@ const Dashboard = () => {
 
 
   return (
-    <>
+    <div>
       <Routes>
         <Route path="/" element={<Coins coins={coins} />} />
-        <Route path="/coin/:coinId" element={<Coin />} />
+        <Route path="coin/:coinId" element={<Coin />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

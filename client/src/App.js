@@ -1,33 +1,33 @@
-import React from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import Coin from "./routes/Coin"; // Ensure Coin component is imported if necessary
-import Layout from "./pages/Layout"; // Adjust the path to where Layout.js is located
+import Coin from "./routes/Coin";
+import Layout from "./pages/Layout";
 import ContactUs from "./pages/contactUs";
 
-
 function App() {
-  
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />, // Use Layout as the root element
-      children: [
-        { path: "/", element: <Signup /> },
-        { path: "/login", element: <Login /> },
-        { path: "/dashboard", element: <Dashboard /> },
-        { path: "/coin/:coinId", element: <Coin /> },
-        { path: "/contactUs", element: <ContactUs /> },
-      ],
-    },
-  ]);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      setUser(JSON.parse(userData));
+    }
+  }, []);
 
   return (
-    <div className="app">
-      <RouterProvider router={router} />
-    </div>
+    <Router>
+      <Layout user={user} setUser={setUser} />
+      <Routes>
+        <Route path="/" element={<Signup />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route path="/coin/:coinId" element={<Coin />} />
+        <Route path="/contactUs" element={<ContactUs />} />
+      </Routes>
+    </Router>
   );
 }
 
