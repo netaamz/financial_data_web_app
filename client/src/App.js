@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate  } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
@@ -21,7 +21,8 @@ function App() {
     <Router>
       <Layout user={user} setUser={setUser} />
       <Routes>
-        <Route path="/" element={<Signup />} />
+        <Route path="/" element={<Navigate to="/signup" />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="/coin/:coinId" element={<Coin />} />
