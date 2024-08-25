@@ -31,18 +31,23 @@
 
 .contactForm {
     background-color: #f0eaff; /* Light purple background */
+    
 }
 
 /* Title Styling */
-.contactInfo h1 {
+.contactInfo h1,.contactInfo h2 {
     font-size: 1.5rem; /* Adjust size as needed */
-    color: #6900ff; /* Purple color */
+    color: #811fc7; 
+    font-weight: bold;
 }
 
 .contactForm label {
     font-size: 2rem; /* Larger size for the 'Contact Us' title */
     font-weight: bold;
-    color: #000000; /* Black color */
+    color: #811fc7;
+}
+ul.list-unstyled li {
+    font-weight: bold;
 }
 
 /* Form Styling */
@@ -74,7 +79,7 @@
 /* Social Media and Button Styling */
 .social-media a {
     margin-right: 15px;
-    color: #333; /* Dark gray color */
+    color: #333; 
     text-decoration: none;
 }
 
@@ -84,16 +89,23 @@
 
 .support-button {
     margin-top: 15px;
+    display: block; 
+    margin: 0 auto;
 }
 
 .btn-primary {
-    background-color: #6900ff;
-    border-color: #6900ff;
+    margin-top: 1px;
+    background-color: white;
+    border: 2px solid #720e9e; 
+    color: #720e9e; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
 }
 
 .btn-primary:hover {
-    background-color: #5600e0;
-    border-color: #5600e0;
+    background-color: #720e9e; 
+    border: 2px solid #720e9e;
+    color: white; 
 }
 
 /* Responsive adjustments */
