@@ -43,8 +43,8 @@
 
 .signup .btn.btn-success{
     margin-top: 1px;
-    background-color: #6900ff;
-    border: 2px solid #6900ff; 
+    background-color: #720e9e;
+    border: 2px solid #720e9e; 
     color: white; 
     cursor: pointer; 
     transition: background-color 0.3s, color 0.3s; 
@@ -52,7 +52,7 @@
 
 .signup .btn.btn-success:hover{
     background-color: white; 
-    color: #6900ff; 
+    color: #720e9e; 
 }
 
 .addUser h2{
