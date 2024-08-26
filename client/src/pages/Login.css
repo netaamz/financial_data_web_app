@@ -43,6 +43,20 @@
     color: Hex #4681f4; 
     font-weight: bold;
 }
+.btn.btn-success{
+    
+
+    color: white; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+    border: 2px solid  #4681f4; 
+}
+
+.btn.btn-success:hover{
+    background-color: white; 
+    border: 2px solid  #4681f4; 
+    color: #4681f4; 
+}
 .switch{
     margin-top: 30px;
     text-align: center;

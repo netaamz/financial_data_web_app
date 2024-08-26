@@ -105,7 +105,7 @@ const Login = ({setUser }) => {
             placeholder='Enter password'
           />
 
-          <button type='submit' className='btn btn-primary' disabled={isSubmitting}>
+          <button type='submit' className='btn btn-success' disabled={isSubmitting}>
             Login
           </button>
         </div>
