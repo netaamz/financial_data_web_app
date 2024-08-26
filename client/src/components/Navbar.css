@@ -63,3 +63,18 @@
     border: none;
     cursor: pointer;
 }
+/* Responsive design adjustments for mobile screens */
+@media screen and (max-width: 720px) {
+    .navbar-logo {
+        display: flex;
+        align-items: left;
+        left: 10%;
+    }
+    .navbar button{
+        display: flex;
+        align-items: left;
+     
+        padding: 10px 25px;
+
+    }
+}

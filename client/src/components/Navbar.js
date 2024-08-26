@@ -44,7 +44,7 @@ const Navbar = ({ user,setUser }) => {
 
   const renderAuthButtons = () => {
     if (user) {
-      return <UserDropdown user={user} onLogout={handleLogout} />;
+      return <div className="nav-right"> <UserDropdown  user={user} onLogout={handleLogout} /></div>;
     } else {
       return (
         <button onClick={handleLoginClick}>
@@ -63,7 +63,7 @@ const Navbar = ({ user,setUser }) => {
       </Link>
       <div className="nav-right">
         <Link to='/contactUs'>
-          <button>Contact Us <IoChatbubblesOutline /></button>
+          <button> <span className="hide-mobile">Contact Us</span> <IoChatbubblesOutline /></button>
         </Link>
         {renderAuthButtons()}
       </div>

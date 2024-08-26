@@ -17,6 +17,7 @@ const UserDropdown = ({ user, onLogout }) => {
         value="user" 
         aria-label="User menu"
       >
+        
         <option value="user" disabled>{user ? `Hello, ${user.name}` : 'User'}</option>
         <option value="logout">Logout</option>
       </select>
