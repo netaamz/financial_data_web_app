@@ -33,8 +33,8 @@ const Dashboard = () => {
       <div className="text-center mb-4 bg-dark text-white p-3 rounded">
         {/* Remove vh-100 and adjust margins for spacing */}
         <h2>Largest Companies by Market Cap</h2>
-        <p>Companies: <strong>{totalCompanies}</strong></p>
-        <p>Total Market Cap: <strong>${(totalMarketCap / 1e12).toFixed(3)} T</strong></p>
+        <p className='hide-mobile'>Companies: <strong>{totalCompanies}</strong></p>
+        <p className='hide-mobile'>Total Market Cap: <strong>${(totalMarketCap / 1e12).toFixed(3)} T</strong></p>
       </div>
 
       {/* The coin list is rendered below the market cap information */}

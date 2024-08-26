@@ -63,6 +63,7 @@ const Coins = (props) => {
   return (
     <div className='container'>
       {/* Rank by options */}
+      <div className='hide-mobile'>
       <div className="rank-by-container">
         <span>Rank by:</span>
         <button
@@ -95,6 +96,7 @@ const Coins = (props) => {
         >
           Mkt Cap {sortConfig?.key === 'market_cap' && (sortConfig.direction === 'asc' ? '▲' : '▼')}
         </button>
+      </div>
       </div>
       {/* Table header with sorting */}
       <div>
