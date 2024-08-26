@@ -3,9 +3,10 @@
 /* Full page container with rounded corners */
 .container1 {
     display: flex;
+    margin: 50px;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+     /* height: 100vh; Full viewport height */
     padding: 20px; /* Add some padding around the container */
 }
 

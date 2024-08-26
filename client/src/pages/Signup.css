@@ -1,10 +1,10 @@
 .addUser{
     width: 25%;
     margin: 50px auto;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.806);
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0,0.065);
+    box-shadow: 1px 1px 4px #811fc7;
     color: #811fc7; 
     font-weight: bold;   
 
@@ -14,7 +14,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-
 }
 
 .addUserForm .inputGroup label{
@@ -24,21 +23,24 @@
 .addUserForm .inputGroup input{
     margin-top: 5px;
     padding: 10px ;
-
+    border-radius: 5px;
+    border: 1px solid #811fc7;
 }
 
 .inputGroup button {
     margin-top: 10px;
-    background-color: green;
-    border: 2px solid green; 
+    background-color:  #4681f4;
+    border: 2px solid  #4681f4; 
     color: white; 
     cursor: pointer; 
     transition: background-color 0.3s, color 0.3s; 
+    font-weight: bold;
 }
 
 .inputGroup button:hover {
     background-color: white; 
-    color: green; 
+    color: Hex #4681f4; 
+    font-weight: bold;
 }
 
 
@@ -54,11 +56,13 @@
     color: white; 
     cursor: pointer; 
     transition: background-color 0.3s, color 0.3s; 
+    font-weight: bold;
 }
 
 .login .btn.btn-primary:hover{
     background-color: white; 
     color: #720e9e; 
+    font-weight: bold;
 }
 
 .addUser h2{

@@ -20,12 +20,14 @@
 .addUserForm .inputGroup input{
     margin-top: 5px;
     padding: 10px ;
+    border-radius: 5px;
+    border: 1px solid #811fc7;
 }
 
 .inputGroup button{
     margin-top: 10px;
-    background-color: green;
-    border: 2px solid green; 
+    background-color:  rgb(70, 129, 244);
+    border: 2px solid  rgb(70, 129, 244); 
     color: white; 
     cursor: pointer; 
     transition: background-color 0.3s, color 0.3s; 
@@ -33,8 +35,8 @@
 
 .inputGroup button:hover {
     background-color: white; 
-    color: green; 
-    border: 2px solid green;
+    color:  #4681f4; 
+    border: 2px solid  #4681f4;
 }
 
 .signup{
@@ -49,11 +51,13 @@
     color: white; 
     cursor: pointer; 
     transition: background-color 0.3s, color 0.3s; 
+    font-weight: bold;
 }
 
 .signup .btn.btn-success:hover{
     background-color: white; 
     color: #720e9e; 
+    font-weight: bold;
 }
 
 .addUser h2{
