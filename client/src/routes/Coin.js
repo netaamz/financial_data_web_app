@@ -43,9 +43,6 @@ const Coin = () => {
           <h1>{coin.name}</h1>
         </div>
         <div className='content'>
-          <div className='rank'>
-            <span className='rank-btn'>Rank # {coin.market_cap_rank}</span>
-          </div>
           <div className='info'>
             <div className='coin-heading'>
               {coin.image ? <img src={coin.image.small} alt='' /> : null}

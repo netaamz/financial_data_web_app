@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import './ContactUs.css'; // Import your custom CSS file
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios'; // Ensure axios is imported
 
 function ContactUs() {
     const [form, setForm] = useState({
         name: '',
         email: '',
         subject: '',
+        message: '', 
         topic: '',
     });
     const [errors, setErrors] = useState('');
+    const [success, setSuccess] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -17,7 +20,7 @@ function ContactUs() {
     };
 
     const validateContactForm = () => {
-        const { name, email, subject, topic } = form;
+        const { name, email, subject,message, topic } = form;
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         let errorMessage = '';
 
@@ -33,6 +36,10 @@ function ContactUs() {
             errorMessage += 'Subject is required.\n';
         }
 
+        if (!message) {
+            errorMessage += 'Message is required.\n';
+        }
+
         if (topic === '') {
             errorMessage += 'Please select a topic.\n';
         }
@@ -41,10 +48,27 @@ function ContactUs() {
         return !errorMessage;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (validateContactForm()) {
-            alert(`Name: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\nTopic: ${form.topic}`);
+            try {
+                const response = await axios.post('http://localhost:3001/contactUs', form);
+
+                if (response.data.success) {
+                    setSuccess('Message sent successfully!');
+                    setForm({
+                        name: '',
+                        email: '',
+                        subject: '',
+                        message: '',
+                        topic: ''
+                    });
+                } else {
+                    setErrors(response.data.message || 'Failed to send message.');
+                }
+            } catch (error) {
+                setErrors(error.response?.data?.message || 'An error occurred.');
+            }
         }
     };
 
@@ -63,7 +87,7 @@ function ContactUs() {
                             <button type="button" onClick={contactSupport} className="btn btn-primary support-button">
                                 Contact Support
                             </button>
-
+                            <br></br>
                             <h2>Let's get in touch</h2>
                             <ul className="list-unstyled">
                                 <li><i className="bi bi-telephone" aria-hidden="true"></i> CALL SALES NOW</li>
@@ -153,6 +177,7 @@ function ContactUs() {
                                     Send
                                 </button>
                                 {errors && <div className="alert alert-danger mt-3">{errors}</div>}
+                                {success && <div className="alert alert-success mt-3">{success}</div>}
                             </form>
                         </div>
                     </div>

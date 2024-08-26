@@ -7,7 +7,10 @@ const Coins = (props) => {
   const [sortConfig, setSortConfig] = useState(null);
   const [sortedCoins, setSortedCoins] = useState([]);
 
-  // Function to handle sorting
+  const [rankBy, setRankBy] = useState('market_cap'); // State for 'Rank by' selection
+
+
+  // Function to handle sorting based on button click
   const sortCoins = (key) => {
     let direction = 'asc';
     if (sortConfig?.key === key && sortConfig.direction === 'asc') {
@@ -59,6 +62,41 @@ const Coins = (props) => {
 
   return (
     <div className='container'>
+      {/* Rank by options */}
+      <div className="rank-by-container">
+        <span>Rank by:</span>
+        <button
+          className={`btn ${rankBy === 'name' ? 'btn-primary' : 'btn-outline-secondary'}`}
+          onClick={() => { setRankBy('name'); sortCoins('name'); }}
+        >
+          Coin {sortConfig?.key === 'name' && (sortConfig.direction === 'asc' ? '▲' : '▼')}
+        </button>
+        <button
+          className={`btn ${rankBy === 'price' ? 'btn-primary' : 'btn-outline-secondary'}`}
+          onClick={() => { setRankBy('price'); sortCoins('price'); }}
+        >
+          Price {sortConfig?.key === 'price' && (sortConfig.direction === 'asc' ? '▲' : '▼')}
+        </button>
+        <button
+          className={`btn ${rankBy === '24h' ? 'btn-primary' : 'btn-outline-secondary'}`}
+          onClick={() => { setRankBy('24h'); sortCoins('24h'); }}
+        >
+          24h {sortConfig?.key === '24h' && (sortConfig.direction === 'asc' ? '▲' : '▼')}
+        </button>
+        <button
+          className={`btn ${rankBy === 'volume' ? 'btn-primary' : 'btn-outline-secondary'}`}
+          onClick={() => { setRankBy('volume'); sortCoins('volume'); }}
+        >
+          Volume {sortConfig?.key === 'volume' && (sortConfig.direction === 'asc' ? '▲' : '▼')}
+        </button>
+        <button
+          className={`btn ${rankBy === 'market_cap' ? 'btn-primary' : 'btn-outline-secondary'}`}
+          onClick={() => { setRankBy('market_cap'); sortCoins('market_cap'); }}
+        >
+          Mkt Cap {sortConfig?.key === 'market_cap' && (sortConfig.direction === 'asc' ? '▲' : '▼')}
+        </button>
+      </div>
+      {/* Table header with sorting */}
       <div>
         <div className='heading'>
           <p onClick={() => sortCoins('#')}>
