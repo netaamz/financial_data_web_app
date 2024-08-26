@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 
 const sendEmail = async (to, subject, text) => {
     const mailOptions = {
-        from: process.env.SMTP_MAIL,
+        from: '"Crypto Data App" <Crypto@cryptodata.com>',
         to,
         subject,
         text
