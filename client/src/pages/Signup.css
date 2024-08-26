@@ -1,13 +1,13 @@
+
 .addUser{
-    width: 25%;
-    margin: 50px auto;
-    background-color: rgba(255, 255, 255, 0.806);
+    margin: auto;
+    background-color: rgb(255, 255, 255);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 1px 1px 4px #811fc7;
     color: #811fc7; 
     font-weight: bold;   
-
+   
 }
 
 .addUserForm .inputGroup{
@@ -15,7 +15,6 @@
     display: flex;
     flex-direction: column;
 }
-
 .addUserForm .inputGroup label{
     margin-top: 10px;
 }
@@ -31,7 +30,7 @@
     margin-top: 10px;
     background-color:  #4681f4;
     border: 2px solid  #4681f4; 
-    color: white; 
+    color: rgb(255, 255, 255); 
     cursor: pointer; 
     transition: background-color 0.3s, color 0.3s; 
     font-weight: bold;

@@ -1,50 +1,54 @@
-.addUser{
-    width: 25%;
-    margin: 50px auto;
-    background-color: white;
-    padding: 40px;
+.addUser {
+    max-width: 400px;
+    width: 90%;
+    margin: 20px auto;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
     border-radius: 10px;
+    color: #811fc7; 
+    font-weight: bold;   
     box-shadow: 1px 1px 8px rgba(0, 0, 0,0.065);
 }
-
-.addUserForm .inputGroup{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.addUser h2{
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0,0.065);
+    
 }
-
+.addUserForm .inputGroup input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #811fc7;
+    box-sizing: border-box;
+}
 .addUserForm .inputGroup label{
     margin-top: 10px;
 }
-
-.addUserForm .inputGroup input{
-    margin-top: 5px;
-    padding: 10px ;
-    border-radius: 5px;
-    border: 1px solid #811fc7;
-}
-
-.inputGroup button{
-    margin-top: 10px;
-    background-color:  rgb(70, 129, 244);
-    border: 2px solid  rgb(70, 129, 244); 
-    color: white; 
-    cursor: pointer; 
+.inputGroup button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color:  #4681f4;
+    border: 2px solid  #4681f4; 
+    color: rgb(255, 255, 255); 
     transition: background-color 0.3s, color 0.3s; 
+    font-weight: bold;
 }
-
 .inputGroup button:hover {
     background-color: white; 
-    color:  #4681f4; 
-    border: 2px solid  #4681f4;
+    color: Hex #4681f4; 
+    font-weight: bold;
 }
-
-.signup{
+.switch{
     margin-top: 30px;
     text-align: center;
 }
 
-.signup .btn.btn-success{
+.switch .btn.btn-primary{
     margin-top: 1px;
     background-color: #720e9e;
     border: 2px solid #720e9e; 
@@ -54,15 +58,22 @@
     font-weight: bold;
 }
 
-.signup .btn.btn-success:hover{
+.switch .btn.btn-primary:hover{
     background-color: white; 
     color: #720e9e; 
     font-weight: bold;
 }
+@media (max-width: 480px) {
+    .addUser {
+        padding: 15px;
+    }
 
-.addUser h2{
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 8px rgba(0, 0, 0,0.065);
+    .addUser h2 {
+        font-size: 1.5em;
+    }
+
+    .addUserForm .inputGroup input,
+    .inputGroup button {
+        padding: 8px;
+    }
 }

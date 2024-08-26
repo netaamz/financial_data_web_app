@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link} from 'react-router-dom';
-import './Signup.css'; 
+import './Login.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
@@ -70,6 +70,7 @@ const Signup = () => {
   };
 
   return (
+    
     <div className='addUser'>
       <h2>Sign Up</h2>
       <form className='addUserForm' onSubmit={handleSignup}>
@@ -95,6 +96,7 @@ const Signup = () => {
           />
 
           <label htmlFor='password'>Password:</label>
+          
           <input
             type='password'
             id='password'
@@ -124,11 +126,12 @@ const Signup = () => {
         {success && <p className='success'>{success}</p>}
       </form>
 
-      <div className='login'>
+      <div className='switch'>
         <p>Already have an account?</p>
         <Link to='/login' className='btn btn-primary'>Sign In</Link>
       </div>
     </div>
+ 
   );
 };
 

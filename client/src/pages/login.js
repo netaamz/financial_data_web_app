@@ -114,9 +114,9 @@ const Login = ({setUser }) => {
         {success && <p className='success'>{success}</p>}
       </form>
 
-      <div className='signup'>
+      <div className='switch'>
         <p>Don't have an Account?</p>
-        <Link to='/' className='btn btn-success'>
+        <Link to='/' className='btn btn-primary'>
           Sign Up
         </Link>
       </div>
