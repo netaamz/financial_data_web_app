@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate  } from "react-router-dom";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import Signup from "./pages/signup";
+import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
 import Coin from "./routes/Coin";
 import Layout from "./pages/Layout";
 import ContactUs from "./pages/contactUs";
