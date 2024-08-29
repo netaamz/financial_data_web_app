@@ -20,7 +20,6 @@ connectDB();
 //     res.send('Welcome to the API');
 // });
 
-//mongoose.connect("mongodb+srv://vital0035:lqUKaHtEEtZbCGDW@crypto.svrks.mongodb.net/crypto?retryWrites=true&w=majority&appName=crypto") 
 
 // Use userRouter for routes starting with /users
 app.use('/', userRouter);
