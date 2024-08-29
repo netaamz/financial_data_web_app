@@ -17,7 +17,8 @@ const sendEmail = async (name,to, subject, text) => {
     const mailOptions = {
         from: '"Crypto Data App" <Crypto@cryptodata.com>',
         to,
-        subject: subject + Date.now(),
+        subject: subject ,
+       
         text: text ,
         html: `<p><b>Hello ${name},</b><p>we recived your massage: <p>${text}</p></p><p>Thanks for contacting us, we received your inquiry in will contact you any time soon!</p><footer>
   <p>Best regards, Crypto Data app</p>
