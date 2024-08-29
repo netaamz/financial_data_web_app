@@ -52,7 +52,7 @@ function ContactUs() {
         e.preventDefault();
         if (validateContactForm()) {
             try {
-                const response = await axios.post('http://localhost:3001/contactUs', form);
+                const response = await axios.post('https://financial-data-web-app-2.onrender.com/contactUs', form);
 
                 if (response.data.success) {
                     setSuccess('Message sent successfully!');

@@ -52,7 +52,7 @@ const Signup = () => {
 
     // If validation passes, send the data to the server
     try {
-      const response = await axios.post('http://localhost:3001', {
+      const response = await axios.post('https://financial-data-web-app-2.onrender.com', {
         name,
         email,
         password,
