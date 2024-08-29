@@ -6,7 +6,7 @@ export const contactUs = async (req, res) => {
     const { name, email, subject, message } = req.body;
 
     try {
-        const emailResult = await sendEmail(email, subject, message);
+        const emailResult = await sendEmail(name,email, subject, message);
         if (emailResult.success) {
             res.status(200).json({ success: true });
         } else {

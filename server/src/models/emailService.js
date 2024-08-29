@@ -13,12 +13,16 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const sendEmail = async (to, subject, text) => {
+const sendEmail = async (name,to, subject, text) => {
     const mailOptions = {
         from: '"Crypto Data App" <Crypto@cryptodata.com>',
         to,
-        subject,
-        text
+        subject: subject + Date.now(),
+        text: text ,
+        html: `<p><b>Hello ${name},</b><p>we recived your massage: <p>${text}</p></p><p>Thanks for contacting us, we received your inquiry in will contact you any time soon!</p><footer>
+  <p>Best regards, Crypto Data app</p>
+  <p><a href="mailto:${process.env.SMTP_MAIL}">contact via mail</a></p>
+</footer>`
     };
 
     try {
