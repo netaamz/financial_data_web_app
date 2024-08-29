@@ -73,7 +73,7 @@ function ContactUs() {
     };
 
     const contactSupport = () => {
-        window.location.href = "mailto:support@example.com";
+        window.location.href = "cry9to6ata@gmail.com";
     };
 
     return (
@@ -97,7 +97,7 @@ function ContactUs() {
                                 <li><i className="bi bi-person" aria-hidden="true"></i> SALES CONTACT INFO</li>
                                 <p>mysales@gmail.com <br />+1-512-827-3500</p>
                                 <li><i className="bi bi-envelope" aria-hidden="true"></i> MAILING ADDRESS</li>
-                                <p>Austin, Texas 78701<br />United States</p>
+                                <p>Karmiel, North<br />Israel</p>
                             </ul>
                             <p>Connect with us:</p>
                             <div className="social-media">

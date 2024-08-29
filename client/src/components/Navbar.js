@@ -58,7 +58,7 @@ const Navbar = ({ user,setUser }) => {
 
     <div className="navbar">
       <Link to={user ? '/dashboard' : '/login'} className="navbar-logo">
-        <FaCoins className="navbar-icon" aria-label="Bitcoin Icon" />
+        <FaCoins className="navbar-icon"  />
         <h1 className="hide-mobile">Crypto Data</h1>
       </Link>
       <div className="nav-right">
